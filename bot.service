@@ -1,0 +1,15 @@
+[Unit]
+Description=keybase bot for chloelewis.fans
+After=network.target
+
+[Service]
+User=bot
+Group=bot
+WorkingDirectory=/opt/keybase_nood
+ExecStart=/usr/bin/node index.js
+Type=simple
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
