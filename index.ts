@@ -14,7 +14,7 @@ async function main(): Promise<void> {
   try {
     const username = process.env.KB_USERNAME || 'bot';
     const paperkey = process.env.KB_PAPERKEY || '';
-    await bot.init(username, paperkey);
+    await bot.init(username, paperkey, { botLite: false, verbose: false, autoLogSendOnCrash: false });
     const info = bot.myInfo();
     console.log(`Echo bot initialized with username ${info?.username}.`);
 
