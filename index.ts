@@ -34,7 +34,7 @@ async function main(): Promise<void> {
       ],
     });
     console.log('Listening for messages...');
-    await bot.chat.watchAllChannelsForNewMessages(handleMessage, onError);
+    await bot.chat.watchAllChannelsForNewMessages(handleMessage, onError, { hideExploding: false, showLocal: false });
   } catch (error) {
     console.error(error);
   }
