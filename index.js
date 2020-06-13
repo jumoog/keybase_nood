@@ -9,8 +9,8 @@ const bot = new keybase_bot_1.default();
 const FILE_DIR = 'files/';
 async function main() {
     try {
-        const username = 'kilianbot'; // put a real username here
-        const paperkey = 'film victory pact elevator blade snap draw husband pause metal wide episode mirror'; // put a real paperkey here
+        const username = process.env.KB_USERNAME || 'bot';
+        const paperkey = process.env.KB_PAPERKEY || '';
         await bot.init(username, paperkey);
         const info = bot.myInfo();
         console.log(`Echo bot initialized with username ${info === null || info === void 0 ? void 0 : info.username}.`);
