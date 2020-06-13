@@ -18,8 +18,8 @@ async function main() {
           commands: [
             {
               name: 'catfact',
-              description: 'Sends out your message to the current channel.',
-              usage: '[your text]',
+              description: 'get random cat facts',
+              usage: 'catfact',
             },
           ],
         },
@@ -37,29 +37,22 @@ async function main() {
           })
       }
 
-      if (message.content.text.body.startsWith('!video')) {
-        bot.chat.send(message.conversationId, {
-            body: "keybase://team/chloelewis.fans/blue-chair.mp4"
-          })
-      }
-      if (message.content.text.body.startsWith('!darkmode')) {
-        bot.chat.send(message.conversationId, {
-            body: "keybase://chat/chloelewis.fans#general/1996"
-          })
-      }
-      if (message.content.text.body.startsWith(':wave:')){
+      if (message.content.text.body.includes(':wave:')){
         bot.chat.react(message.conversationId, message.id, ':wave:')
       }
-      if (message.content.text.body.toUpperCase().startsWith("HALLO")){
+      if (message.content.text.body.toUpperCase().includes("HALLO")){
         bot.chat.react(message.conversationId, message.id, ':wave:')
       }
-      if (message.content.text.body.toUpperCase().startsWith("HELLO")){
+      if (message.content.text.body.toUpperCase().includes("HELLO")){
         bot.chat.react(message.conversationId, message.id, ':wave:')
       }
-      if (message.content.text.body.toUpperCase().startsWith("GOOD MORNING")){
+      if (message.content.text.body.toUpperCase().includes("GOOD MORNING")){
         bot.chat.react(message.conversationId, message.id, ':wave:')
       }
       if (message.content.text.body.toUpperCase().startsWith("HI")){
+        bot.chat.react(message.conversationId, message.id, ':wave:')
+      }
+      if (message.content.text.body.toUpperCase().includes("BONJOUR")){
         bot.chat.react(message.conversationId, message.id, ':wave:')
       }
     }
