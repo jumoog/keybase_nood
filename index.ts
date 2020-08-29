@@ -78,31 +78,31 @@ async function handleMessage(message: MsgSummary): Promise<void> {
   }
 
   if (body.includes(':wave:')) {
-    bot.chat.react(message.conversationId, message.id, ':wave:');
+    await bot.chat.react(message.conversationId, message.id, ':wave:');
   }
   if (body.toUpperCase().includes('HALLO')) {
-    bot.chat.react(message.conversationId, message.id, ':wave:');
+    await bot.chat.react(message.conversationId, message.id, ':wave:');
   }
   if (body.toUpperCase().includes('HELLO')) {
-    bot.chat.react(message.conversationId, message.id, ':wave:');
+    await bot.chat.react(message.conversationId, message.id, ':wave:');
   }
   if (body.toUpperCase().includes('GOOD MORNING')) {
-    bot.chat.react(message.conversationId, message.id, ':wave:');
+    await bot.chat.react(message.conversationId, message.id, ':wave:');
   }
   if (body.toUpperCase().startsWith('HI')) {
-    bot.chat.react(message.conversationId, message.id, ':wave:');
+    await bot.chat.react(message.conversationId, message.id, ':wave:');
   }
   if (body.toUpperCase().includes('BONJOUR')) {
-    bot.chat.react(message.conversationId, message.id, ':wave:');
+    await bot.chat.react(message.conversationId, message.id, ':wave:');
   }
   if (body.includes(':hankey:')) {
-    bot.chat.react(message.conversationId, message.id, ':hankey:');
+    await bot.chat.react(message.conversationId, message.id, ':hankey:');
   }
   if (body.includes(':poopnerd:')) {
-    bot.chat.react(message.conversationId, message.id, ':hankey:');
+    await bot.chat.react(message.conversationId, message.id, ':hankey:');
   }
   if (body.includes('fart')) {
-    bot.chat.react(message.conversationId, message.id, ':hankey::dash:');
+    await bot.chat.react(message.conversationId, message.id, ':hankey::dash:');
   }
 }
 
