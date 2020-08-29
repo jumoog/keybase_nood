@@ -3,7 +3,6 @@ import p from 'phin';
 import { MsgSummary } from 'keybase-bot/lib/types/chat1';
 
 const bot = new Bot();
-const FILE_DIR = 'files/';
 
 export interface Catfact {
   fact: string;
@@ -34,7 +33,7 @@ async function main(): Promise<void> {
       ],
     });
     console.log('Listening for messages...');
-    await bot.chat.watchAllChannelsForNewMessages(handleMessage, onError, { hideExploding: false, showLocal: false });
+    await bot.chat.watchAllChannelsForNewMessages(handleMessage, onError, { hideExploding: true, showLocal: false });
   } catch (error) {
     console.error(error);
   }
@@ -54,21 +53,9 @@ async function onError(err: Error): Promise<void> {
 }
 
 async function handleMessage(message: MsgSummary): Promise<void> {
-  const channel = message.channel.topicName;
   const body = message.content?.text?.body;
   if (!body) {
     return;
-  }
-
-  if (message.content.type === 'attachment') {
-    if (channel === 'videos') {
-      const attachment = message.content?.attachment;
-      if (!attachment) {
-        return;
-      }
-      bot.chat.download(message.conversationId, message.id, FILE_DIR + attachment.object.filename);
-      return;
-    }
   }
 
   if (body.startsWith('!catfact')) {
