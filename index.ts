@@ -95,6 +95,15 @@ async function handleMessage(message: MsgSummary): Promise<void> {
   if (body.toUpperCase().includes('BONJOUR')) {
     bot.chat.react(message.conversationId, message.id, ':wave:');
   }
+  if (body.includes(':hankey:')) {
+    bot.chat.react(message.conversationId, message.id, ':hankey:');
+  }
+  if (body.includes(':poopnerd:')) {
+    bot.chat.react(message.conversationId, message.id, ':hankey:');
+  }
+  if (body.includes('fart')) {
+    bot.chat.react(message.conversationId, message.id, ':hankey::dash:');
+  }
 }
 
 process.on('SIGINT', shutDown);
