@@ -64,32 +64,30 @@ async function handleMessage(message: MsgSummary): Promise<void> {
     });
   }
 
-  if (body.includes(':wave:')) {
+  if (body.includes(':wave:')
+  || body.toUpperCase().includes('HALLO')
+  || body.toUpperCase().includes('HELLO')
+  || body.toUpperCase().includes('GOOD MORNING')
+  || body.toUpperCase().startsWith('HI')
+  || body.toUpperCase().includes('BONJOUR')) {
     await bot.chat.react(message.conversationId, message.id, ':wave:');
   }
-  if (body.toUpperCase().includes('HALLO')) {
-    await bot.chat.react(message.conversationId, message.id, ':wave:');
-  }
-  if (body.toUpperCase().includes('HELLO')) {
-    await bot.chat.react(message.conversationId, message.id, ':wave:');
-  }
-  if (body.toUpperCase().includes('GOOD MORNING')) {
-    await bot.chat.react(message.conversationId, message.id, ':wave:');
-  }
-  if (body.toUpperCase().startsWith('HI')) {
-    await bot.chat.react(message.conversationId, message.id, ':wave:');
-  }
-  if (body.toUpperCase().includes('BONJOUR')) {
-    await bot.chat.react(message.conversationId, message.id, ':wave:');
-  }
-  if (body.includes(':hankey:')) {
-    await bot.chat.react(message.conversationId, message.id, ':hankey:');
-  }
-  if (body.includes(':poopnerd:')) {
-    await bot.chat.react(message.conversationId, message.id, ':hankey:');
-  }
-  if (body.includes('fart')) {
+  if (body.toUpperCase().includes('SHIT')
+  || body.toUpperCase().includes('CRAP')
+  || body.toUpperCase().includes('POOP')) {
     await bot.chat.react(message.conversationId, message.id, ':hankey::dash:');
+  }
+  if (body.includes(':hankey:')
+  || body.includes(':poopnerd:')
+  || body.includes(':poop:')
+  || body.includes(':shit:')) {
+    await bot.chat.react(message.conversationId, message.id, ':hankey:');
+  }
+  if (body.toUpperCase().includes('FART')) {
+    await bot.chat.react(message.conversationId, message.id, ':hankey::dash:');
+  }
+  if (body.toUpperCase().includes('TRASH')) {
+    await bot.chat.react(message.conversationId, message.id, ':wastebasket:');
   }
 }
 
